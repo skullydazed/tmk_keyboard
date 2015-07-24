@@ -21,15 +21,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xC1ED
-#define PRODUCT_ID      0x2300
+#define PRODUCT_ID      0x2301
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Clued
-#define PRODUCT         CNC Pad
-#define DESCRIPTION     t.m.k. keyboard firmware for Clued CNC Pad
+#define PRODUCT         Clueboard
+#define DESCRIPTION     t.m.k. keyboard firmware for Clueboard
 
 /* key matrix size */
-#define MATRIX_ROWS 4
-#define MATRIX_COLS 5
+#define MATRIX_ROWS 5
+#define MATRIX_COLS 15
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
@@ -40,7 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #undef LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
-#undef LOCKING_RESYNC_ENABLE
+#define LOCKING_RESYNC_ENABLE
 
 /* key combination for command */
 #define IS_COMMAND() ( \

@@ -20,6 +20,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "led.h"
 
 
+/* TODO: Have this use the LED matrix instead.
+ * Cols: D2 D4 D5 D7 E1 C2 C5 C7 A6 A4 F6 F4 F0 B1 E7
+ * Rows: B0 A3 A2 C4 D0
+ */
 void led_set(uint8_t usb_led)
 {
     if (usb_led & (1<<USB_LED_CAPS_LOCK)) {

@@ -2,6 +2,10 @@ Cluecard keyboard firmware
 ==========================
 For the cluecard, skullY's business card.
 
+Q: Where can I get one?
+
+A: This is something skullY gives out to his friends and business acquaintances. For something you can buy go checkout techkeys.us.
+
 ## Clueboard Resources
 - [FIXME](http://link/some/stuff/already)
 

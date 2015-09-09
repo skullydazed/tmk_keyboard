@@ -15,20 +15,25 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <util/delay.h>
 #include <avr/io.h>
 #include "stdint.h"
 #include "led.h"
+#include "light_ws2812.h"
 
+struct cRGB led[1];
 
 void led_set(uint8_t usb_led)
 {
-    if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
-        // output low
-        DDRB |= (1<<2);
-        PORTB &= ~(1<<2);
-    } else {
-        // Hi-Z
-        DDRB &= ~(1<<2);
-        PORTB &= ~(1<<2);
-    }
+    led[0].r=255;led[0].g=00;led[0].b=0;    // Write red to array
+    ws2812_setleds(led,1);
+    _delay_ms(50);                         // wait for 50ms.
+
+    led[0].r=0;led[0].g=255;led[0].b=0;			// green
+    ws2812_setleds(led,1);
+    _delay_ms(50);
+
+    led[0].r=0;led[0].g=00;led[0].b=255;		// blue
+    ws2812_setleds(led,1);
+    _delay_ms(50);
 }

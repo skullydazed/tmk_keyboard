@@ -10,11 +10,11 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 enum macro_id {
-    CMD_TAB,
+    ALT_TAB,
 };
 
 const uint16_t PROGMEM fn_actions[] = {
-    [0] = ACTION_MACRO(CMD_TAB),
+    [0] = ACTION_MACRO(ALT_TAB),
     [1] = ACTION_MODS_KEY(MOD_LGUI, KC_TAB)
 };
 
@@ -24,7 +24,7 @@ const uint16_t PROGMEM fn_actions[] = {
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
     switch (id) {
-        case CMD_TAB:
+        case ALT_TAB:
             return (record->event.pressed ?
                     MACRO(D(LGUI), T(TAB), END) :
                     MACRO(U(LGUI), END));

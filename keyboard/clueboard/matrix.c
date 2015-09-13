@@ -57,6 +57,10 @@ uint8_t matrix_cols(void)
 
 void matrix_init(void)
 {
+    // JTAG disable for PORT F. write JTD bit twice within four cycles.
+    MCUCR |= (1<<JTD);
+    MCUCR |= (1<<JTD);
+
     // initialize row and col
     unselect_rows();
     init_cols();

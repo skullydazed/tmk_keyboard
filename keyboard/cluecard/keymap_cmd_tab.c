@@ -15,7 +15,6 @@ enum macro_id {
 
 const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_MACRO(CMD_TAB),
-    [1] = ACTION_MODS_KEY(MOD_LGUI, KC_TAB)
 };
 
 /*

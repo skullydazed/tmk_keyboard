@@ -69,6 +69,13 @@ uint8_t matrix_cols(void)
 
 void matrix_init(void)
 {
+    // Turn on the LED
+    PORTF |= (1<<0);
+
+    // JTAG disable for PORT F. write JTD bit twice within four cycles.
+    MCUCR |= (1<<JTD);
+    MCUCR |= (1<<JTD);
+
     adb_host_init();
     // wait for keyboard to boot up and receive command
     _delay_ms(1000);

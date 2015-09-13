@@ -25,5 +25,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 void led_set(uint8_t usb_led)
 {
     adb_host_kbd_led(~usb_led);
-    PORTF |= (1<<0);
 }

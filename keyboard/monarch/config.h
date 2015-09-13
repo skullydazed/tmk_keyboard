@@ -21,11 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xC1ED
-#define PRODUCT_ID      0x2301
+#define PRODUCT_ID      0x2399
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Clued
-#define PRODUCT         Clueboard
-#define DESCRIPTION     t.m.k. keyboard firmware for Clueboard
+#define MANUFACTURER    Metalmark
+#define PRODUCT         Monarch
+#define DESCRIPTION     t.m.k. keyboard firmware for Monarch
 
 /* key matrix size */
 #define MATRIX_ROWS 5

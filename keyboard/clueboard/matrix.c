@@ -157,8 +157,6 @@ static void  init_cols(void)
 
 static matrix_row_t read_cols(void)
 {
- * col: 0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15
- * pin: B3 F1 F4 F5 F6 C7 C6 B6 B5 B4 D7 D6 D4 F7 B0 B1
     return (PINB&(1<<3) ? 0 : (1<<0)) |
            (PINF&(1<<1) ? 0 : (1<<1)) |
            (PINF&(1<<4) ? 0 : (1<<2)) |

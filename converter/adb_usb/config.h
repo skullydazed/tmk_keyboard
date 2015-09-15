@@ -45,11 +45,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 /* ADB port setting */
+/* new adaptor
 #define ADB_PORT        PORTB
 #define ADB_PIN         PINB
 #define ADB_DDR         DDRB
 #define ADB_DATA_BIT    6
 #define ADB_PSW_BIT     4
+*/
+/* Prototype */
+#define ADB_PORT        PORTF
+#define ADB_PIN         PINF
+#define ADB_DDR         DDRF
+#define ADB_DATA_BIT    4
 
 /* key combination for command */
 #ifndef __ASSEMBLER__

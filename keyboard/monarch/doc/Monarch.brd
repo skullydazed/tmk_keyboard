@@ -2614,7 +2614,9 @@
 <rectangle x1="198.9582" y1="-90.6018" x2="199.6694" y2="-90.551" layer="22" rot="R180"/>
 <rectangle x1="201.3966" y1="-90.551" x2="202.1078" y2="-90.5002" layer="22" rot="R180"/>
 <rectangle x1="198.9074" y1="-90.551" x2="199.6186" y2="-90.5002" layer="22" rot="R180"/>
-<text x="12.25" y="-68" size="2.1844" layer="21" font="vector">Designed by skullY in Felton, CA</text>
+<text x="29.25" y="-29.5" size="2.1844" layer="21" font="vector">Designed by skullY in Felton, CA</text>
+<text x="66.1" y="-77.5" size="1.778" layer="21" rot="R270">GND</text>
+<text x="66.1" y="-67.4" size="1.778" layer="21" rot="R270">VCC</text>
 </plain>
 <libraries>
 <library name="AlpsCherry">
@@ -2646,8 +2648,8 @@
 <wire x1="-10.19" y1="-6.9" x2="-10.19" y2="7.1" width="0.127" layer="21"/>
 <pad name="ALPS1" x="-4.94" y="4.1" drill="1.3" diameter="2.54" rot="R180"/>
 <pad name="ALPS2" x="0.06" y="4.6" drill="1.3" diameter="2.54"/>
-<text x="0.06" y="-5.12" size="1.27" layer="25" font="vector" rot="R180" align="bottom-center">&gt;NAME</text>
-<text x="-0.04" y="-3.72" size="1.27" layer="26" font="vector" rot="MR180" align="bottom-center">&gt;NAME</text>
+<text x="0.06" y="-0.04" size="1.27" layer="25" font="vector" rot="R180" align="bottom-center">&gt;NAME</text>
+<text x="-0.04" y="0.09" size="1.27" layer="26" font="vector" rot="MR180" align="bottom-center">&gt;NAME</text>
 <wire x1="-10.19" y1="7.1" x2="5.31" y2="7.1" width="0.127" layer="21"/>
 <wire x1="5.31" y1="7.1" x2="10.08" y2="7.1" width="0.127" layer="21"/>
 <wire x1="10.08" y1="7.1" x2="10.08" y2="-6.9" width="0.127" layer="21"/>
@@ -2663,8 +2665,8 @@
 <wire x1="7.75" y1="-7" x2="-7.75" y2="-7" width="0.127" layer="21"/>
 <wire x1="-7.75" y1="-7" x2="-7.75" y2="7" width="0.127" layer="21"/>
 <wire x1="-7.75" y1="7" x2="7.7" y2="7" width="0.127" layer="21"/>
-<pad name="ALPS1" x="-2.5" y="4" drill="1" diameter="2.54" rot="R180"/>
-<pad name="ALPS2" x="2.5" y="4.5" drill="1.2" diameter="2.54"/>
+<pad name="ALPS1" x="-2.5" y="4" drill="1.3" diameter="2.54" rot="R180"/>
+<pad name="ALPS2" x="2.5" y="4.5" drill="1.3" diameter="2.54"/>
 <text x="0.2" y="-0.14" size="1.27" layer="21" font="vector" align="bottom-center">&gt;NAME</text>
 <text x="0" y="0.09" size="1.27" layer="22" font="vector" rot="MR0" align="bottom-center">&gt;NAME</text>
 </package>
@@ -2899,6 +2901,20 @@ type 0309, grid 10mm</description>
 <vertex x="0.0635" y="-3.4925"/>
 <vertex x="1.2065" y="-3.4925" curve="-90"/>
 </polygon>
+</package>
+<package name="H2-2.54">
+<wire x1="-1.27" y1="2.54" x2="1.27" y2="2.54" width="0.127" layer="21"/>
+<wire x1="1.27" y1="2.54" x2="1.27" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-2.54" x2="-1.27" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-2.54" x2="-1.27" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="2.54" x2="1.27" y2="2.54" width="0" layer="39"/>
+<wire x1="1.27" y1="2.54" x2="1.27" y2="-2.54" width="0" layer="39"/>
+<wire x1="-1.27" y1="-2.54" x2="-1.27" y2="2.54" width="0" layer="39"/>
+<pad name="1" x="0" y="1.27" drill="0.889" diameter="1.651" shape="square"/>
+<pad name="2" x="0" y="-1.27" drill="0.889" diameter="1.651"/>
+<text x="-1.905" y="-1.905" size="0.889" layer="25" ratio="11" rot="R90">&gt;NAME</text>
+<text x="2.54" y="-2.54" size="0.889" layer="27" ratio="11" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.27" y1="-2.54" x2="1.27" y2="2.54" layer="39"/>
 </package>
 </packages>
 </library>
@@ -3340,8 +3356,8 @@ design rules under a new name.</description>
 <element name="C5" library="Seeed-OPL-Capacitor" package="C0805" value="100nf" x="70.5" y="-33.75" rot="MR180">
 <attribute name="MPN" value="CC0805KRX7R9BB104" x="32.5" y="-75.75" size="1.778" layer="28" rot="MR180" display="off"/>
 </element>
-<element name="C6" library="Seeed-OPL-Capacitor" package="C0805" value="100nf" x="61" y="-31.35" rot="MR90">
-<attribute name="MPN" value="CC0805KRX7R9BB104" x="103" y="-75.35" size="1.778" layer="28" rot="MR90" display="off"/>
+<element name="C6" library="Seeed-OPL-Capacitor" package="C0805" value="100nf" x="62.8" y="-36.45" rot="MR270">
+<attribute name="MPN" value="CC0805KRX7R9BB104" x="20.8" y="7.55" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
 <element name="C7" library="Seeed-OPL-Capacitor" package="C0805" value="100nf" x="75.3" y="-24.25" rot="MR0">
 <attribute name="MPN" value="CC0805KRX7R9BB104" x="125.3" y="17.75" size="1.778" layer="28" rot="MR0" display="off"/>
@@ -3370,6 +3386,9 @@ design rules under a new name.</description>
 <element name="RLCAPSLOCK" library="Seeed-OPL-Resistor" package="R0309_10" value="" x="80" y="-68"/>
 <element name="C1" library="Seeed-OPL-Capacitor" package="C0805" value="1uf" x="62.8" y="-18.5" rot="MR0">
 <attribute name="MPN" value="CC0805KKX7R8BB105" x="62.8" y="-18.5" size="1.778" layer="28" rot="MR0" display="off"/>
+</element>
+<element name="+5V" library="Seeed-OPL-Connector" package="H2-2.54" value="" x="67" y="-75" rot="R180">
+<attribute name="MPN" value="F185-1102A1BSYA1" x="67" y="-75" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 </elements>
 <signals>
@@ -4023,11 +4042,14 @@ design rules under a new name.</description>
 <wire x1="99.94" y1="-102.901" x2="64" y2="-102.901" width="0.3" layer="16"/>
 <wire x1="64" y1="-102.901" x2="59.3" y2="-102.901" width="0.3" layer="16"/>
 <wire x1="65.4" y1="-31.6" x2="65.4" y2="-37.6" width="0.3" layer="16"/>
-<wire x1="65.4" y1="-37.6" x2="64.25" y2="-38.75" width="0.3" layer="16"/>
 <via x="64.25" y="-38.75" extent="1-16" drill="0.6"/>
 <wire x1="64.25" y1="-38.75" x2="64.25" y2="-102.651" width="0.3" layer="1"/>
 <wire x1="64.25" y1="-102.651" x2="64" y2="-102.901" width="0.3" layer="1"/>
 <via x="64" y="-102.901" extent="1-16" drill="0.6"/>
+<wire x1="65.4" y1="-37.6" x2="64.25" y2="-38.75" width="0.3" layer="16"/>
+<wire x1="64.25" y1="-38.75" x2="64.2" y2="-38.8" width="0.3" layer="16"/>
+<wire x1="64.2" y1="-38.8" x2="64.2" y2="-38.7" width="0.3" layer="16"/>
+<wire x1="64.2" y1="-38.7" x2="64.25" y2="-38.75" width="0.3" layer="16"/>
 </signal>
 <signal name="N$70">
 <contactref element="KP_PERIOD" pad="ALPS2"/>
@@ -4568,10 +4590,7 @@ design rules under a new name.</description>
 <wire x1="62.834" y1="-10.666" x2="70.31" y2="-10.666" width="0.3" layer="16"/>
 <wire x1="62.75" y1="-10.75" x2="62.69" y2="-10.69" width="0.3" layer="16"/>
 <wire x1="62.69" y1="-10.69" x2="62.69" y2="-10.666" width="0.3" layer="16"/>
-<wire x1="64.05" y1="-30.25" x2="61.111" y2="-30.25" width="0.3" layer="16"/>
-<wire x1="61.111" y1="-30.25" x2="60.111" y2="-31.35" width="0.3" layer="16"/>
 <wire x1="63.5" y1="-34.639" x2="63.4" y2="-34.639" width="0.3" layer="16"/>
-<wire x1="63.4" y1="-34.639" x2="60.111" y2="-31.35" width="0.3" layer="16"/>
 <wire x1="70.75" y1="-27.25" x2="68.5" y2="-27.25" width="0.3" layer="16"/>
 <wire x1="68.0748" y1="-15.619" x2="68.0748" y2="-17" width="0.3" layer="16"/>
 <wire x1="68.0748" y1="-17" x2="68.0748" y2="-20.1752" width="0.3" layer="16"/>
@@ -4591,9 +4610,6 @@ design rules under a new name.</description>
 <wire x1="79.75" y1="-21.75" x2="80.25" y2="-22.25" width="0.3" layer="16"/>
 <wire x1="80.25" y1="-22.25" x2="80.25" y2="-22.639" width="0.3" layer="16"/>
 <wire x1="80.25" y1="-22.639" x2="80.611" y2="-23" width="0.3" layer="16"/>
-<via x="58.75" y="-31.5" extent="1-16" drill="0.6"/>
-<wire x1="60.111" y1="-31.35" x2="58.9" y2="-31.35" width="0.3" layer="16"/>
-<wire x1="58.9" y1="-31.35" x2="58.75" y2="-31.5" width="0.3" layer="16"/>
 <wire x1="64.05" y1="-26.25" x2="62.75" y2="-26.25" width="0.3" layer="16"/>
 <wire x1="62.75" y1="-26.25" x2="61.5" y2="-25" width="0.3" layer="16"/>
 <wire x1="61.5" y1="-25" x2="60.061" y2="-25" width="0.3" layer="16"/>
@@ -4629,6 +4645,7 @@ design rules under a new name.</description>
 <vertex x="16" y="-9.5" curve="90"/>
 </polygon>
 <contactref element="C1" pad="2"/>
+<contactref element="+5V" pad="1"/>
 </signal>
 <signal name="N$77">
 <contactref element="C2" pad="1"/>
@@ -4774,8 +4791,6 @@ design rules under a new name.</description>
 <wire x1="72" y1="-25" x2="73.1" y2="-23.9" width="0.3" layer="1"/>
 <wire x1="70.5" y1="-34.639" x2="70.639" y2="-34.639" width="0.3" layer="16"/>
 <wire x1="70.639" y1="-34.639" x2="72" y2="-36" width="0.3" layer="16"/>
-<wire x1="64.05" y1="-30.75" x2="62.489" y2="-30.75" width="0.3" layer="16"/>
-<wire x1="62.489" y1="-30.75" x2="61.889" y2="-31.35" width="0.3" layer="16"/>
 <via x="63.3" y="-31.4" extent="1-16" drill="0.6"/>
 <wire x1="63.3" y1="-31.4" x2="63.3" y2="-24.8" width="0.3" layer="1"/>
 <wire x1="63.3" y1="-24.8" x2="63.3" y2="-23.1" width="0.3" layer="1"/>
@@ -4788,6 +4803,18 @@ design rules under a new name.</description>
 <wire x1="63.35" y1="-25.05" x2="63.3" y2="-24.8" width="0.3" layer="16"/>
 <wire x1="64.05" y1="-30.75" x2="63.95" y2="-30.75" width="0.3" layer="16"/>
 <wire x1="63.95" y1="-30.75" x2="63.3" y2="-31.4" width="0.3" layer="16"/>
+<wire x1="63.3" y1="-31.4" x2="62.8" y2="-31.4" width="0.3" layer="16"/>
+<wire x1="62.8" y1="-31.4" x2="61.9" y2="-32.3" width="0.3" layer="16"/>
+<wire x1="61.9" y1="-32.3" x2="61.9" y2="-36.439" width="0.3" layer="16"/>
+<wire x1="61.9" y1="-36.439" x2="61.911" y2="-36.45" width="0.3" layer="16"/>
+<contactref element="+5V" pad="2"/>
+<wire x1="61.911" y1="-36.45" x2="62" y2="-36.539" width="0.3" layer="16"/>
+<wire x1="62" y1="-36.539" x2="62" y2="-38.7" width="0.3" layer="16"/>
+<via x="62" y="-38.7" extent="1-16" drill="0.6" shape="square"/>
+<wire x1="62" y1="-38.7" x2="62" y2="-73.7" width="0.3" layer="1"/>
+<via x="62" y="-73.7" extent="1-16" drill="0.6"/>
+<wire x1="62" y1="-73.7" x2="62.03" y2="-73.73" width="0.3" layer="16"/>
+<wire x1="62.03" y1="-73.73" x2="67" y2="-73.73" width="0.3" layer="16"/>
 </signal>
 </signals>
 <errors>

@@ -190,8 +190,8 @@
 <wire x1="-10.19" y1="-6.9" x2="-10.19" y2="7.1" width="0.127" layer="21"/>
 <pad name="ALPS1" x="-4.94" y="4.1" drill="1.3" diameter="2.54" rot="R180"/>
 <pad name="ALPS2" x="0.06" y="4.6" drill="1.3" diameter="2.54"/>
-<text x="0.06" y="-5.12" size="1.27" layer="25" font="vector" rot="R180" align="bottom-center">&gt;NAME</text>
-<text x="-0.04" y="-3.72" size="1.27" layer="26" font="vector" rot="MR180" align="bottom-center">&gt;NAME</text>
+<text x="0.06" y="-0.04" size="1.27" layer="25" font="vector" rot="R180" align="bottom-center">&gt;NAME</text>
+<text x="-0.04" y="0.09" size="1.27" layer="26" font="vector" rot="MR180" align="bottom-center">&gt;NAME</text>
 <wire x1="-10.19" y1="7.1" x2="5.31" y2="7.1" width="0.127" layer="21"/>
 <wire x1="5.31" y1="7.1" x2="10.08" y2="7.1" width="0.127" layer="21"/>
 <wire x1="10.08" y1="7.1" x2="10.08" y2="-6.9" width="0.127" layer="21"/>
@@ -207,8 +207,8 @@
 <wire x1="7.75" y1="-7" x2="-7.75" y2="-7" width="0.127" layer="21"/>
 <wire x1="-7.75" y1="-7" x2="-7.75" y2="7" width="0.127" layer="21"/>
 <wire x1="-7.75" y1="7" x2="7.7" y2="7" width="0.127" layer="21"/>
-<pad name="ALPS1" x="-2.5" y="4" drill="1" diameter="2.54" rot="R180"/>
-<pad name="ALPS2" x="2.5" y="4.5" drill="1.2" diameter="2.54"/>
+<pad name="ALPS1" x="-2.5" y="4" drill="1.3" diameter="2.54" rot="R180"/>
+<pad name="ALPS2" x="2.5" y="4.5" drill="1.3" diameter="2.54"/>
 <text x="0.2" y="-0.14" size="1.27" layer="21" font="vector" align="bottom-center">&gt;NAME</text>
 <text x="0" y="0.09" size="1.27" layer="22" font="vector" rot="MR0" align="bottom-center">&gt;NAME</text>
 </package>
@@ -1732,6 +1732,20 @@ type 0309, grid 20mm</description>
 <vertex x="1.2065" y="-3.4925" curve="-90"/>
 </polygon>
 </package>
+<package name="H2-2.54">
+<wire x1="-1.27" y1="2.54" x2="1.27" y2="2.54" width="0.127" layer="21"/>
+<wire x1="1.27" y1="2.54" x2="1.27" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-2.54" x2="-1.27" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-2.54" x2="-1.27" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="2.54" x2="1.27" y2="2.54" width="0" layer="39"/>
+<wire x1="1.27" y1="2.54" x2="1.27" y2="-2.54" width="0" layer="39"/>
+<wire x1="-1.27" y1="-2.54" x2="-1.27" y2="2.54" width="0" layer="39"/>
+<pad name="1" x="0" y="1.27" drill="0.889" diameter="1.651" shape="square"/>
+<pad name="2" x="0" y="-1.27" drill="0.889" diameter="1.651"/>
+<text x="-1.905" y="-1.905" size="0.889" layer="25" ratio="11" rot="R90">&gt;NAME</text>
+<text x="2.54" y="-2.54" size="0.889" layer="27" ratio="11" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.27" y1="-2.54" x2="1.27" y2="2.54" layer="39"/>
+</package>
 </packages>
 <symbols>
 <symbol name="MICRO-USB5+4P">
@@ -1759,6 +1773,16 @@ type 0309, grid 20mm</description>
 <pin name="GND@3" x="-12.7" y="-1.27" length="short"/>
 <pin name="GND@4" x="-12.7" y="-3.81" length="short"/>
 </symbol>
+<symbol name="HEADER-2P">
+<wire x1="-2.54" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
+<text x="-6.35" y="6.35" size="1.27" layer="95" ratio="10">&gt;name</text>
+<text x="1.27" y="6.35" size="1.27" layer="96" ratio="10">&gt;value</text>
+<pin name="1" x="-7.62" y="2.54" length="middle" function="dotclk" swaplevel="1"/>
+<pin name="2" x="-7.62" y="-2.54" length="middle" swaplevel="1"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="MINI-USB2.0-RECEPT-5POS-4-LEGS-(ST-USB-013A)" prefix="J" uservalue="yes">
@@ -1782,6 +1806,25 @@ type 0309, grid 20mm</description>
 <technologies>
 <technology name="">
 <attribute name="MPN" value="ST-USB-013A" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DIP-BLACK-FEMALE-HEADER-VERT(2P-2.54)" prefix="J" uservalue="yes">
+<description>320030023</description>
+<gates>
+<gate name="G$1" symbol="HEADER-2P" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="H2-2.54">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MPN" value="F185-1102A1BSYA1" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -2173,6 +2216,9 @@ type 0309, grid 20mm</description>
 <part name="C1" library="Seeed-OPL-Capacitor" deviceset="CERAMIC-1UF-25V-10%-X7R(0805)" device="" value="1uf"/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="+5V" library="Seeed-OPL-Connector" deviceset="DIP-BLACK-FEMALE-HEADER-VERT(2P-2.54)" device=""/>
+<part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
+<part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3530,6 +3576,9 @@ type 0309, grid 20mm</description>
 <instance part="C1" gate="G$1" x="87.63" y="63.5" rot="R180"/>
 <instance part="GND9" gate="1" x="73.66" y="55.88"/>
 <instance part="SUPPLY2" gate="G$1" x="91.44" y="63.5"/>
+<instance part="+5V" gate="G$1" x="45.72" y="68.58"/>
+<instance part="SUPPLY3" gate="G$1" x="38.1" y="66.04" rot="R180"/>
+<instance part="GND3" gate="1" x="38.1" y="73.66" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -3622,6 +3671,10 @@ type 0309, grid 20mm</description>
 <junction x="41.91" y="49.53"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <junction x="41.91" y="46.99"/>
+</segment>
+<segment>
+<pinref part="+5V" gate="G$1" pin="1"/>
+<pinref part="GND3" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$77" class="0">
@@ -3913,6 +3966,10 @@ type 0309, grid 20mm</description>
 <junction x="91.44" y="60.96"/>
 <junction x="91.44" y="63.5"/>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="+5V" gate="G$1" pin="2"/>
+<pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
 </segment>
 </net>
 </nets>

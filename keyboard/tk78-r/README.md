@@ -1,5 +1,5 @@
-Clueboard keyboard firmware
-===========================
+TK78-R keyboard firmware
+========================
 DIY compact keyboard designed by Sentraq, PCB designed by skullydazed.
 
 ## TK78 Resources

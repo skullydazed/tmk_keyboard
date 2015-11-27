@@ -3,7 +3,7 @@ Monarch keyboard firmware
 DIY compact keyboard designed by koalapear, PCB designed by skullY.
 
 ## Monarch Resources
-- [FIXME](http://link/some/stuff/already)
+- [GeekHack Thread](https://geekhack.org/index.php?topic=75786.0)
 
 
 ## Build
@@ -17,14 +17,12 @@ Several version of keymap are available in advance but you are recommended to de
 
 To build firmware binary hex file with a certain keymap just do `make` with `KEYMAP` option like:
 
-    $ make KEYMAP=[poker|poker_set|poker_bit|plain|hasu|spacefn|hhkb|<name>]
+    $ make KEYMAP=[default|<name>]
 
 
-### 1  fc660m
-[keymap_fc660m.c](keymap_fc660m.c) emulates original fc660m layers
+### 1  default
+[keymap_default.c](keymap_default.c) Default monarch layout
 
-    Fn + Esc = `
-    Fn + {left, down, up, right}  = {home, pgdown, pgup, end}
 
 #### 1.0 Default ANSI layer
     FIXME

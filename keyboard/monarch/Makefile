@@ -55,15 +55,15 @@ SRC =	keymap_common.c \
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
 else
-    SRC := keymap_fc660m.c $(SRC)
+    SRC := keymap_default.c $(SRC)
 endif
 
 CONFIG_H = config.h
 
 
 # MCU name
-MCU = at90usb1287
-#MCU = atmega32u4
+#MCU = at90usb1287
+MCU = atmega32u4
 
 # Processor frequency.
 #     This will define a symbol, F_CPU, in all source code files equal to the

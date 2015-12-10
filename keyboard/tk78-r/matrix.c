@@ -121,7 +121,7 @@ matrix_row_t matrix_get_row(uint8_t row)
 
 void matrix_print(void)
 {
-    print("\nr/c 0123456789ABCDEF\n");
+    print("\nr/c 0123456789ABCDEFGH\n");
     for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
         phex(row); print(": ");
         pbin_reverse16(matrix_get_row(row));
@@ -157,22 +157,22 @@ static void  init_cols(void)
 
 static matrix_row_t read_cols(void)
 {
-    return (PINB&(1<<4) ? 0 : (1<<0)) |
-           (PINB&(1<<5) ? 0 : (1<<1)) |
-           (PINF&(1<<6) ? 0 : (1<<2)) |
-           (PINE&(1<<6) ? 0 : (1<<3)) |
-           (PINF&(1<<5) ? 0 : (1<<4)) |
-           (PINF&(1<<4) ? 0 : (1<<5)) |
-           (PINF&(1<<1) ? 0 : (1<<6)) |
-           (PINF&(1<<0) ? 0 : (1<<7)) |
-           (PINB&(1<<0) ? 0 : (1<<8)) |
-           (PINB&(1<<1) ? 0 : (1<<9)) |
-           (PINB&(1<<2) ? 0 : (1<<10)) |
-           (PINB&(1<<3) ? 0 : (1<<11)) |
-           (PINB&(1<<7) ? 0 : (1<<12)) |
-           (PIND&(1<<2) ? 0 : (1<<13)) |
-           (PIND&(1<<3) ? 0 : (1<<14)) |
-           (PIND&(1<<5) ? 0 : (1<<15)) |
+    return (PINB&(1<<4) ? 0 : (1UL<<0)) |
+           (PINB&(1<<5) ? 0 : (1UL<<1)) |
+           (PINF&(1<<6) ? 0 : (1UL<<2)) |
+           (PINE&(1<<6) ? 0 : (1UL<<3)) |
+           (PINF&(1<<5) ? 0 : (1UL<<4)) |
+           (PINF&(1<<4) ? 0 : (1UL<<5)) |
+           (PINF&(1<<1) ? 0 : (1UL<<6)) |
+           (PINF&(1<<0) ? 0 : (1UL<<7)) |
+           (PINB&(1<<0) ? 0 : (1UL<<8)) |
+           (PINB&(1<<1) ? 0 : (1UL<<9)) |
+           (PINB&(1<<2) ? 0 : (1UL<<10)) |
+           (PINB&(1<<3) ? 0 : (1UL<<11)) |
+           (PINB&(1<<7) ? 0 : (1UL<<12)) |
+           (PIND&(1<<2) ? 0 : (1UL<<13)) |
+           (PIND&(1<<3) ? 0 : (1UL<<14)) |
+           (PIND&(1<<5) ? 0 : (1UL<<15)) |
            (PIND&(1<<4) ? 0 : (1UL<<16)) |
            (PIND&(1<<6) ? 0 : (1UL<<17));
 }

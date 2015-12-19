@@ -11,7 +11,7 @@ void led_set(uint8_t usb_led)
     print("led_set\n");
 }
 
-void backlight_set(uint8_t level)
+void init_backlight_pin(void)
 {
     ICR1 = 0xFFFF;  // Use 16-bit resolution.
     DDRC |= (1<<7);
@@ -19,7 +19,10 @@ void backlight_set(uint8_t level)
     OCR4C = 0xFF;
     TCCR4A = 0b10000010;
     TCCR4B = 0b00000001;
+}
 
+void backlight_set(uint8_t level)
+{
     switch (level)
     {
         case 0:

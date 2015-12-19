@@ -2,60 +2,47 @@
 #include "backlight.h"
 #include "led.h"
 
-void backlight_init_ports()
-{
-    DDRC |= 0b10000000; // Enable PC7 for output (backlight/switch)
-}
+#include "print.h"
+
+int pwm_level;
 
 void led_set(uint8_t usb_led)
 {
-    (usb_led & (1<<USB_LED_CAPS_LOCK)) ? backlight_caps_enable() : backlight_caps_disable();
+    print("led_set\n");
 }
 
 void backlight_set(uint8_t level)
 {
-    (level & BACKLIGHT_SWITCH) ? backlight_switch_enable() : backlight_switch_disable();
-    (level & BACKLIGHT_PCB) ? backlight_pcb_enable() : backlight_pcb_disable();
-}
+    ICR1 = 0xFFFF;  // Use 16-bit resolution.
+    DDRC |= (1<<7);
+    TC4H = 0x03;
+    OCR4C = 0xFF;
+    TCCR4A = 0b10000010;
+    TCCR4B = 0b00000001;
 
-void backlight_switch_enable()
-{
-    PORTC |= 0b10000000;
-}
-
-void backlight_switch_disable()
-{
-    PORTC &= ~0b10000000;
-}
-
-void backlight_switch_invert()
-{
-    PORTC ^= 0b10000000;
-}
-
-void backlight_pcb_enable()
-{
-    PORTC |= 0b10000000;
-}
-
-void backlight_pcb_disable()
-{
-    PORTB &= ~0b10000000;
-}
-
-void backlight_pcb_invert()
-{
-    PORTB ^= 0b10000000;
-}
-
-void backlight_caps_enable()
-{
-}
-
-void backlight_caps_disable()
-{
-}
-
-void backlight_caps_invert()
-{
+    switch (level)
+    {
+        case 0:
+            pwm_level = 0x000;
+            TC4H = pwm_level >> 8;
+            OCR4A = 0xFF & pwm_level;
+            break;
+        case 1:
+            pwm_level = 0x00F;
+            TC4H = pwm_level >> 8;
+            OCR4A = 0xFF & pwm_level;
+            break;
+        case 2:
+            pwm_level = 0x0F0;
+            TC4H = pwm_level >> 8;
+            OCR4A = 0xFF & pwm_level;
+            break;
+        case 3:
+            pwm_level = 0xF00;
+            TC4H = pwm_level >> 8;
+            OCR4A = 0xFF & pwm_level;
+            break;
+        default:
+            xprintf("Unknown level: %d\n", level);
+    }
 }

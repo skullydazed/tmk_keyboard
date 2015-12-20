@@ -70,6 +70,11 @@ void matrix_init(void)
         matrix[i] = 0;
         matrix_debouncing[i] = 0;
     }
+
+    // Enable underlighting
+    #ifdef BACKLIGHT_ENABLE
+    init_backlight_pin();
+    #endif
 }
 
 uint8_t matrix_scan(void)

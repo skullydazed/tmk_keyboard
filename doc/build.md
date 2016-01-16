@@ -7,22 +7,30 @@ Download and Install
 ### 1. Install Tools
 
 1. **Toolchain** On Windows install [Atmel AVR Toolchain][atmelgcc] for AVR GCC compiler and [Cygwin][cygwin](or [MinGW][mingw]) for shell terminal. On Mac you can use [CrossPack][crosspack] or your favorite package manager. On Linux you can install AVR GCC with your favorite package manager.
-
-2. **Programmer** Install [dfu-programmer][dfu-prog]. GUI tool [Atmel FLIP][flip] also can be used on Windows.
-
+  * Windows:
+    * Install [Atmel AVR Toolchain][atmelgcc] for AVR GCC compiler and [Cygwin][cygwin](or [MinGW][mingw]) for shell terminal.
+  * Mac: 
+    * Install homebrew by following the directions on their [homepage](http://homebrew.sh).
+    * `$ brew tap osx-cross/avr`
+    * `$ brew install avr-libc`
+  * Linux:
+    * Install AVR GCC with your favorite package manager.
+2. **Programmer**
+  * Windows: GUI tool [Atmel FLIP][flip] can be used on Windows.
+  * Mac: 
+    * `$ brew install dfu-programmer`
+  * Linux: Install dfu-programmer from your package manager
 3. **Driver** On Windows you start DFU bootloader on the chip first time you will see 'Found New Hardware Wizard' to install driver. If you install device driver properly you can find chip name like 'ATmega32U4' under 'LibUSB-Win32 Devices' tree on 'Device Manager'. If not you shall need to update its driver on 'Device Manager'. You will find the driver in `FLIP` install directory like: C:\Program Files (x86)\Atmel\Flip 3.4.5\usb\. In case of `dfu-programmer` use its driver.
-
-If you use PJRC Teensy you don't need step 2 and 3 above, just get [Teensy loader][teensy-loader].
 
 
 ### 2. Download source
 You can find firmware source at github:
 
-- <https://github.com/tmk/tmk_keyboard>
+- <https://github.com/skullydazed/tmk_keyboard>
 
 If you are familiar with `Git` tools you are recommended to use it but you can also download zip archive from:
 
-- <https://github.com/tmk/tmk_keyboard/archive/master.zip>
+- <https://github.com/skullydazed/tmk_keyboard/archive/master.zip>
 
 
 Build firmware
@@ -83,17 +91,7 @@ See also these instructions if you need.
 - <http://www.atmel.com/Images/doc7769.pdf>
 
 
-### 3. Program with Teensy Loader
-If you have PJRC Teensy see instruction of `Teensy Loader`.
-
-- <http://www.pjrc.com/teensy/loader.html>
-
-Or use this command if you have command line version of Teensy Loader installed.
-
-    $ make -f Makefile.<variant> teensy
-
-
-### 4. Program with Other programmer
+### 3. Program with Other programmer
 You may want to use other programmer like `avrdude` with AVRISPmkII, Arduino or USBasp. In that case you can still use make target `program` for build with configuring `PROGRAM_CMD` in Makefile.
 
     $ make -f Makefile.<variant> program

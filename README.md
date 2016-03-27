@@ -1,4 +1,5 @@
 NOTICE: This repository is obsolete!
+====================================
 
 Please use my fork of QMK in the future: <https://github.com/skullydazed/qmk_keyboard>
 

@@ -1,3 +1,8 @@
+NOTICE: This repository is obsolete!
+
+Please use my fork of QMK in the future: <https://github.com/skullydazed/qmk_keyboard>
+
+
 TMK Keyboard Firmware Collection
 ================================
 This is a keyboard firmware with some useful features for Atmel AVR controller.

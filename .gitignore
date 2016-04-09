@@ -12,3 +12,4 @@ tags
 build/
 *.bak
 *.idea
+.DS_Store

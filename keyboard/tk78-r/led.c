@@ -18,9 +18,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <avr/io.h>
 #include "stdint.h"
 #include "led.h"
+#include "backlight.h"
 
 
-void led_set(uint8_t usb_led)
-{
+void led_set(uint8_t usb_led) {
+    if (usb_led & (1<<USB_LED_NUM_LOCK)) {
+        // Numlock on
+        send_i2c_message(0x07, 0xFF);  // LED5
+    } else {
+        // Numlock off
+        send_i2c_message(0x07, 0x00);  // LED5
+    }
+    if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
+        // capslock on
+        send_i2c_message(0x08, 0xFF);  // LED6
+    } else {
+        // capslock off
+        send_i2c_message(0x08, 0x00);  // LED6
+    }
     return;
 }

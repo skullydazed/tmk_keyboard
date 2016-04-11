@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "debug.h"
 #include "util.h"
 #include "matrix.h"
+#include "backlight.h"
 
 
 #ifndef DEBOUNCE
@@ -70,6 +71,11 @@ void matrix_init(void)
         matrix[i] = 0;
         matrix_debouncing[i] = 0;
     }
+
+    // Enable backlight
+    xprintf("Enabling backlight.\n");
+    init_backlight_pin();
+    xprintf("Enabled backlight.\n");
 }
 
 uint8_t matrix_scan(void)

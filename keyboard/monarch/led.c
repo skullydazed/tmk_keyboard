@@ -28,23 +28,23 @@ void led_set(uint8_t usb_led)
 {
     if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
         // output high
-        DDRB  |= (1<<6);
-        PORTB |= (1<<6);
+        DDRC  |= (1<<6);
+        PORTC |= (1<<6);
     } else {
         // output low
-        DDRB  &= ~(1<<6);
-        PORTB &= ~(1<<6);
+        DDRC  &= ~(1<<6);
+        PORTC &= ~(1<<6);
     }
 
     #ifndef BACKLIGHT_ENABLE
         if (usb_led & (1<<USB_LED_NUM_LOCK)) {
             // output high
-            DDRC |= (1<<6);
-            PORTC |= (1<<6);
+            DDRB |= (1<<6);
+            PORTB |= (1<<6);
         } else {
             // output low
-            DDRC &= ~(1<<6);
-            PORTC &= ~(1<<6);
+            DDRB &= ~(1<<6);
+            PORTB &= ~(1<<6);
         }
     #endif
 }
@@ -52,7 +52,7 @@ void led_set(uint8_t usb_led)
 #ifdef BACKLIGHT_ENABLE
     void init_backlight_pin(void)
     {
-        DDRC |= (1<<6);
+        DDRB |= (1<<6);
         TC4H = 0x03;
         OCR3C = 0xFF;
         TCCR3A = 0b10000010;
